@@ -9,7 +9,7 @@ For CSP reporting you need to be able to take a JSON object from anywhere, and r
 Use a lambda behind an API Gateway instead, and you're all done at a fraction of the price.
 
 # Example Usage / Testing
-curl -d '{"cow":"moo","pig":"oink"}' -H 'Content-Type: application/json' https://sect.net/webhooks/csp 
+curl -d '{"cow":"moo","pig":"oink"}' -H 'Content-Type: application/json' https://orcus.sect.net/webhooks/csp 
 
 # Status Codes
 200 is success.
