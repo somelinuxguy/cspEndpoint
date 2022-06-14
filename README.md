@@ -1,5 +1,5 @@
 # Just a basic webhook
-For use a CSP reporting URI
+For use as a CSP reporting URI
 
 ## What it do
 All this does is take a POST and log it.
@@ -13,6 +13,7 @@ sect.net/webhooks/csp
 
 # Status Codes
 200 is success.
+
 200 is also a failure. We take all your garabge. We don't care.
 
 
