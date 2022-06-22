@@ -1,14 +1,13 @@
 # The Terraform Dir
-Wouldn't it be cool if you could just run a terraform
+Create the lambda function with iam roles, log groups,
+and policy all attached.
 
-and have a lambda built, have an api gateway built,
+TODO: apigateway in front of it
 
-and then have them connected so you can "just run it"
+## Important Usage notes
 
-and be done? Yeah it would. Here ya go.
+Remember that build and deploy functions should be in your pipeline. Terraform just runs to ensure your infrastructure exists.
 
-and.
+Your deployment pipeline (Gitlab runner, circleCI etc.) should "zip lambda_function.zip main.js" for you as part of the build. Otherwise terrform will fail and tell you the zip file doesnt exist when it goes to hash it.
 
-## That's it.
-
-There is nothing else. This is just me using Terraform to build the infra in the cloud to run little lamby.
+I assume you are following a path like: build -> terraform -> deploy

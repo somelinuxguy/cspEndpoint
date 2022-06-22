@@ -10,6 +10,7 @@ terraform {
   }
 }
 
+# You will have to change these to suit your profile
 provider "aws" {
   region = "us-east-2"
   profile = "lazlo"
