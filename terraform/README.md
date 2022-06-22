@@ -2,7 +2,7 @@
 Create the lambda function with iam roles, log groups,
 and policy all attached.
 
-TODO: apigateway in front of it
+Create an API gateway in REST mode and barf out the invoke url
 
 ## Important Usage notes
 
