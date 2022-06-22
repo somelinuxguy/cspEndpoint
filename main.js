@@ -15,6 +15,7 @@ let constructResponse = function() {
     return responseObject;
 };
 
+// $this_filename.handler
 exports.handler = async (event) => {
     AWS.config.update({ region: "us-east-1" });
     if (event) {
