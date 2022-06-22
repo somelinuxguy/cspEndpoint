@@ -6,13 +6,11 @@ resource "aws_apigatewayv2_api" "lambda" {
 
 resource "aws_apigatewayv2_stage" "lambda" {
   api_id = aws_apigatewayv2_api.lambda.id
-
   name        = "production"
   auto_deploy = true
 
   access_log_settings {
     destination_arn = aws_cloudwatch_log_group.api_gw.arn
-
     format = jsonencode({
       requestId               = "$context.requestId"
       sourceIp                = "$context.identity.sourceIp"
@@ -31,7 +29,6 @@ resource "aws_apigatewayv2_stage" "lambda" {
 
 resource "aws_apigatewayv2_integration" "scp_lambda" {
   api_id = aws_apigatewayv2_api.lambda.id
-
   integration_uri    = aws_lambda_function.csp_endpoint_lambda.invoke_arn
   integration_type   = "AWS_PROXY"
   integration_method = "POST"
@@ -39,14 +36,12 @@ resource "aws_apigatewayv2_integration" "scp_lambda" {
 
 resource "aws_apigatewayv2_route" "scp_lambda" {
   api_id = aws_apigatewayv2_api.lambda.id
-
   route_key = "POST /"
   target    = "integrations/${aws_apigatewayv2_integration.scp_lambda.id}"
 }
 
 resource "aws_cloudwatch_log_group" "api_gw" {
   name = "/aws/api_gw/${aws_apigatewayv2_api.lambda.name}"
-
   retention_in_days = 1
 }
 
@@ -55,6 +50,5 @@ resource "aws_lambda_permission" "api_gw" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.csp_endpoint_lambda.function_name
   principal     = "apigateway.amazonaws.com"
-
   source_arn = "${aws_apigatewayv2_api.lambda.execution_arn}/*/*"
 }
