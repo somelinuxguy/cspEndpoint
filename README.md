@@ -9,7 +9,23 @@ For CSP reporting you need to be able to take a JSON object from anywhere, and r
 Use a lambda behind an API Gateway instead, and you're all done at a fraction of the price.
 
 # Example Usage / Testing
-curl -d '{"cow":"moo","pig":"oink"}' -H 'Content-Type: application/json' https://orcus.sect.net/webhooks/csp 
+Probably something like this:
+```
+cd terraform
+terraform init etc etc yadda yadda
+...
+Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+base_url = "https://8675309jenny.execute-api.us-east-2.amazonaws.com/v1"
+
+cthulhu@rlyeh% curl -X POST -d '{"pig":"cat"}' https://218e18pqi7.execute-api.us-east-2.amazonaws.com/v1
+
+Logged
+```
+
+
 
 # Status Codes
 200 is success.
