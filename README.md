@@ -25,8 +25,6 @@ cthulhu@rlyeh% curl -X POST -d '{"pig":"cat"}' https://218e18pqi7.execute-api.us
 Logged
 ```
 
-
-
 # Status Codes
 200 is success.
 
@@ -34,4 +32,13 @@ Logged
 
 
 ## TO DO
-Nothing. It's all done, and perfect, forever.
+Create a Dockerfile for those who want to containerize this
+Create kubernetes resources 
+ - deployment
+ - service 
+
+Let's be honest, despite their constant issues CircleCI is pretty nice. Let's add a circleCI build for fun.
+
+What about a deployment? TF is doing the infra build but k8s assumes EKS is in place (yes we use AWS). What if we want to integrate our CircleCI to an ArgoCD as well? Let's do that.
+
+Have you figured out yet I'm doing this to show off my DevOps skillz? Skip the 3 hour technical interview please.
