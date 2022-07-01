@@ -97,13 +97,6 @@ resource "aws_lambda_function" "csp_endpoint_lambda" {
     }
   }
 
-  #vpc_config {
-    # blank, defaults are OK right now
-    # otherwise insert your own 
-    # subnet_ids =
-    # security_group_ids=
-  #}
-
   depends_on = [
     aws_iam_role_policy_attachment.lambda_logs,
     aws_cloudwatch_log_group.csp_endpoint,

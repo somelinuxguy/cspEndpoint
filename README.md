@@ -20,7 +20,7 @@ Outputs:
 
 base_url = "https://8675309jenny.execute-api.us-east-2.amazonaws.com/v1"
 
-cthulhu@rlyeh% curl -X POST -d '{"pig":"cat"}' https://218e18pqi7.execute-api.us-east-2.amazonaws.com/v1
+cthulhu@rlyeh% curl -X POST -d '{"pig":"cat"}' https://8675309jenny.execute-api.us-east-2.amazonaws.com/v1
 
 Logged
 ```
@@ -32,13 +32,11 @@ Logged
 
 
 ## TO DO
-Create a Dockerfile for those who want to containerize this
-Create kubernetes resources 
+Create
+- a Dockerfile for those who want to containerize this
+- kubernetes resources 
  - deployment
  - service 
-
-Let's be honest, despite their constant issues CircleCI is pretty nice. Let's add a circleCI build for fun.
+- CircleCI pipeline
 
 What about a deployment? TF is doing the infra build but k8s assumes EKS is in place (yes we use AWS). What if we want to integrate our CircleCI to an ArgoCD as well? Let's do that.
-
-Have you figured out yet I'm doing this to show off my DevOps skillz? Skip the 3 hour technical interview please.

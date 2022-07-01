@@ -16,7 +16,7 @@ let constructResponse = function() {
 };
 
 // $this_filename.handler
-exports.handler = async (event) => {
+exports.handler = async(event) => {
     if (event) {
         console.log("request: " + JSON.stringify(event));
     } else {
